@@ -1,34 +1,131 @@
-
+'''
+# Life Expectancy Analysis
+'''
 ![Life Expectancy Trends](https://www.shutterstock.com/image-vector/man-life-cycle-concept-set-260nw-1753181330.jpg)
 
-# Life Expectancy Analysis
 
-This notebook explores the factors influencing life expectancy across different countries based on data provided by the World Health Organization (WHO). By performing data analysis, we aim to identify and evaluate how various socio-economic, health, and environmental factors impact life expectancy for different countries over the years.
+'''
+## Objective
+The goal of this analysis is to predict life expectancy by identifying key factors such as economic status, healthcare access, and lifestyle habits. Understanding these factors can help policymakers take proactive steps to improve public health and longevity.
+'''
 
-## Data Description
+'''
+## Dataset Description
+The dataset contains features related to health, demographics, and economic conditions, including:
 
-The dataset includes the following columns:
+- **Life Expectancy (target variable)**
+- **GDP per Capita**
+- **Infant Mortality Rate**
+- **Healthcare Expenditure**
+- **Access to Clean Water**
+- **Education Levels**
+- **Disease Prevalence** (e.g., HIV, tuberculosis)
+- **Lifestyle Factors** (e.g., smoking, alcohol consumption)
 
-- **Country**: The name of the country.
-- **Year**: The year the data was recorded.
-- **Status**: Country classification as either "Developed" or "Developing."
-- **Life expectancy**: The average life expectancy (in years).
-- **Adult Mortality**: The mortality rates of adults (probability of dying between ages 15 and 60 per 1000 population).
-- **Infant Deaths**: The number of infant deaths per 1000 population.
-- **Alcohol**: The recorded per capita (age 15+) alcohol consumption (in liters of pure alcohol).
-- **Percentage Expenditure**: Expenditure on health as a percentage of GDP per capita (%).
-- **Hepatitis B**: The percentage of 1-year-olds immunized for Hepatitis B.
-- **Measles**: The number of reported measles cases per 1000 population.
-- **BMI**: The average Body Mass Index of the entire population.
-- **Under-five Deaths**: The number of deaths of children under age five per 1000 population.
-- **Polio**: The percentage of 1-year-olds immunized for Polio.
-- **Total Expenditure**: Government health expenditure as a percentage of total government expenditure (%).
-- **Diphtheria**: The percentage of 1-year-olds immunized for Diphtheria (DTP3).
-- **HIV/AIDS**: Deaths per 1000 live births due to HIV/AIDS (ages 0-4).
-- **GDP**: The country's GDP per capita (in USD).
-- **Population**: The total population of the country.
-- **Thinness 1-19 years**: The prevalence of thinness among children and adolescents (ages 10 to 19) (%).
-- **Thinness 5-9 years**: The prevalence of thinness among children (ages 5 to 9) (%).
-- **Income Composition of Resources**: The Human Development Index based on income composition (ranging from 0 to 1).
-- **Schooling**: The average number of years of schooling.
+The goal is to determine the most significant predictors of life expectancy and analyze trends across different regions.
+'''
+
+'''
+## Exploratory Data Analysis (EDA)
+### Key Insights:
+'''
+
+'''
+# Economic and Healthcare Factors
+- Higher GDP per capita and healthcare spending are correlated with higher life expectancy.
+- Countries with low healthcare investment have shorter life spans.
+'''
+
+'''
+# Infant Mortality and Disease Prevalence
+- Higher infant mortality rates are strongly linked to lower life expectancy.
+- Regions with high rates of infectious diseases (HIV, tuberculosis) have significantly lower longevity.
+'''
+
+'''
+# Sanitation and Clean Water
+- Access to clean water and sanitation significantly increases life expectancy.
+- Poor water quality contributes to higher mortality rates from preventable diseases.
+'''
+
+'''
+# Education and Lifestyle
+- Higher education levels correlate with longer life expectancy.
+- Unhealthy habits (e.g., smoking, alcohol consumption) negatively impact lifespan.
+'''
+
+'''
+## Feature Engineering
+### Skewness Handling:
+'''
+
+'''
+# Right-skewed features (e.g., GDP per capita, healthcare expenditure, population)
+# → Log transformation was applied to reduce skewness.
+'''
+
+'''
+# Left-skewed features (e.g., schooling years, sanitation access)
+# → Reciprocal transformation was used to adjust distribution.
+'''
+
+'''
+### Standardization & Encoding:
+- **StandardScaler** applied to numerical features.
+- **OneHotEncoder** used for categorical features (e.g., region).
+'''
+
+'''
+## Modeling and Metrics
+The following models were tested:
+- **Linear Regression** (Baseline model)
+- **Random Forest Regressor** (Captures non-linearity)
+- **Gradient Boosting Regressor** (Optimized for performance)
+'''
+
+'''
+### Evaluation Metrics:
+- **Mean Absolute Error (MAE)**
+- **Mean Squared Error (MSE)**
+- **R² Score** (Variance explained by the model)
+'''
+
+'''
+## Key Findings from Modeling
+'''
+
+'''
+# Linear Regression
+- Struggled with capturing complex non-linear relationships.
+- Moderate R² score, indicating some predictive power but room for improvement.
+'''
+
+'''
+# Random Forest Regressor
+- Showed higher importance for GDP, infant mortality, and healthcare spending.
+- Performed better than Linear Regression but had slight overfitting.
+'''
+
+'''
+# Gradient Boosting Regressor
+- Best-performing model with the highest R² score and lowest MAE.
+- Handled skewed data effectively due to transformations.
+'''
+
+'''
+## Best Model Selection
+- **Gradient Boosting** was chosen due to better generalization, higher predictive accuracy, and effective handling of feature relationships.
+'''
+
+'''
+## Conclusion
+Key determinants of life expectancy include:
+- **Healthcare expenditure**
+- **Infant mortality rate**
+- **Access to clean water and sanitation**
+- **Economic status (GDP per capita)**
+- **Education and lifestyle factors**
+
+Policymakers can use these insights to invest in healthcare, sanitation, and education to improve global life expectancy.
+'''
 
