@@ -1,13 +1,13 @@
-'''
+
 # Life Expectancy Analysis
-'''
+
 ![Life Expectancy Trends](https://www.shutterstock.com/image-vector/man-life-cycle-concept-set-260nw-1753181330.jpg)
 
 
-'''
+
 ## Objective
 The goal of this analysis is to predict life expectancy by identifying key factors such as economic status, healthcare access, and lifestyle habits. Understanding these factors can help policymakers take proactive steps to improve public health and longevity.
-'''
+
 
 '''
 ## Dataset Description
