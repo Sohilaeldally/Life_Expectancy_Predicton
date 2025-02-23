@@ -63,22 +63,9 @@ To predict life expectancy, the following models were tested:
 - **Mean Squared Error (MSE)**
 - **R² Score** *(Variance explained by the model)*
 
-## Key Findings from Modeling
-
-### **Linear Regression**
-- Struggled with capturing complex non-linear relationships.
-- Moderate R² score, indicating some predictive power but room for improvement.
-
-### **Random Forest Regressor**
-- Showed higher importance for GDP, infant mortality, and healthcare spending.
-- Performed better than Linear Regression but had slight overfitting.
-
-### **Gradient Boosting Regressor**
-- Best-performing model with the highest R² score and lowest MAE.
-- Handled skewed data effectively due to transformations.
 
 ## Best Model Selection
-Gradient Boosting was chosen due to:
+Random Forest Regressor was chosen due to:
 - **Better generalization**
 - **Higher predictive accuracy**
 - **Effective handling of feature relationships**
