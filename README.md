@@ -57,6 +57,10 @@ To predict life expectancy, the following models were tested:
 - **Linear Regression** *(Baseline model)*
 - **Random Forest Regressor** *(Captures non-linearity)*
 - **Gradient Boosting Regressor** *(Optimized for performance)*
+- **SGD Regressor** (Efficient for Large Datasets)
+- **Decision Tree Regressor** (Interpretable but Prone to Overfitting)
+- **XGBoost Regressor** (Handles Missing Values and Outliers Well)
+- **Support Vector Regressor** (Sensitive to Feature Scaling)
 
 ### Evaluation Metrics:
 - **Mean Absolute Error (MAE)**
